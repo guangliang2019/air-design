@@ -2,6 +2,7 @@ import { Prototype } from "../_interface";
 import { ButtonProps } from "./interface";
 
 const ButtonPrototype: Prototype<ButtonProps> = (controller) => {
+  console.log(controller.props.type);
   return {
     element: "div",
     attributes: {

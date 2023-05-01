@@ -1,10 +1,9 @@
 import { Prototype, TemplateTree } from "@/lib/components/_interface";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, PropType, reactive } from "vue";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const renderTemplate = (template?: TemplateTree, slots?: unknown) => {
-  console.log(template);
   if (!template) return null;
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -22,13 +21,27 @@ const renderTemplate = (template?: TemplateTree, slots?: unknown) => {
   );
 };
 
-const adapter = <Props>(prototype: Prototype<Props>, name: string) =>
-  defineComponent<Props>({
+const adapter = <Props>(
+  prototype: Prototype<Props>,
+  name: string,
+  props: {
+    [P in keyof Props]: {
+      type: PropType<Props[P]>;
+      default?: Props[P];
+      require?: boolean;
+    };
+  }
+) =>
+  defineComponent({
     name,
+    props,
     setup:
       (props, { slots }) =>
-      () =>
-        renderTemplate(prototype({ props: props }), slots),
+      () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        return renderTemplate(prototype({ props: reactive(props) }), slots);
+      },
   });
 
 export default adapter;
