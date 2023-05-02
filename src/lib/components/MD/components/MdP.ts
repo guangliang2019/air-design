@@ -1,10 +1,13 @@
-import { TemplateTree } from "../../_interface";
+import { Controller, TemplateTree } from "../../_interface";
 
-const MdPPrototype = (): TemplateTree => {
+const MdPPrototype = (
+  controller: Controller<{ content: string }>
+): TemplateTree => {
   return {
-    element: "h2",
+    element: "p",
     attributes: {
       className: "a-md-p",
+      innerText: controller.props.content,
     },
     children: [
       {

@@ -12,4 +12,4 @@ const Button = adapter<ButtonProps>(ButtonPrototype, "a-button", {
 });
 
 export default Button;
-export { ButtonProps } from "./interface";
+export type { ButtonProps } from "./interface";

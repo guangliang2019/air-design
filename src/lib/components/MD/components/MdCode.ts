@@ -1,6 +1,6 @@
 import { TemplateTree } from "../../_interface";
 
-const MdPPrototype = (): TemplateTree => {
+const MdCodePrototype = (): TemplateTree => {
   return {
     element: "code",
     attributes: {
@@ -14,4 +14,4 @@ const MdPPrototype = (): TemplateTree => {
   };
 };
 
-export default MdPPrototype;
+export default MdCodePrototype;
