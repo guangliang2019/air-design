@@ -2,12 +2,12 @@
   <div class="root">
     <header class="nav">
       <div class="sidebar sidebar-nav">
-        <div class="logo">Simple Lab</div>
+        <div class="logo">Air Design</div>
       </div>
       <div class="nav-inner"></div>
     </header>
     <div style="display: flex">
-      <aside class="sidebar"></aside>
+      <aside class="sidebar" style="margin-top: var(--nav-height)"></aside>
       <div class="temp-container">
         <div class="container">
           <div class="content">
@@ -100,10 +100,10 @@ https://zh.javascript.info/
 
 <style lang="less">
 .temp-container {
+  padding-top: var(--nav-height);
   flex: 1;
   display: flex;
   height: calc(100vh - var(--nav-height));
-  overflow: scroll;
   background-color: var(--color-bg-1);
 }
 .container {
@@ -112,8 +112,9 @@ https://zh.javascript.info/
   padding: 32px 32px 0;
   max-width: 960px;
   height: calc(100vh - var(--nav-height));
-  //overflow: scroll;
+  margin-left: var(--sidebar-width);
   background-color: var(--color-bg-1);
+  transition: margin-left 0.12s ease;
 }
 
 .content {
@@ -128,25 +129,33 @@ https://zh.javascript.info/
 }
 
 .nav {
-  height: 64px;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  height: var(--nav-height);
   display: flex;
-  width: 100vw;
+  width: 500vw;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+
+  position: fixed;
   &-inner {
     flex: 1;
     border-bottom: 1px solid var(--color-border-1);
+    background-color: rgba(30, 30, 32, 0.75);
   }
 }
 
 .sidebar {
+  position: fixed;
+  //margin-top: var(--nav-height);
+  height: 100vh;
   padding: 0 32px;
   width: var(--sidebar-width);
   background-color: var(--color-bg-0);
   height: calc(100vh - var(--nav-height));
-  transition: margin-left 0.1s ease;
+  transition: margin-left 0.12s ease;
+  z-index: 1000;
   &-nav {
-    height: 100%;
+    height: var(--nav-height);
+    z-index: 1000;
     .logo {
       height: 100%;
       display: flex;
@@ -167,6 +176,12 @@ https://zh.javascript.info/
     margin-left: calc(var(--sidebar-width) * -1);
     height: 100vh;
     position: fixed;
+    &-nav {
+      display: none;
+    }
+  }
+  .container {
+    margin-left: 0;
   }
 }
 
@@ -178,6 +193,13 @@ https://zh.javascript.info/
       (100vw - (var(--layout-max-width) - 64px)) / 2 + var(--sidebar-width) -
         32px
     );
+  }
+  .container {
+    margin-left: calc(
+      (100vw - (var(--layout-max-width) - 64px)) / 2 + var(--sidebar-width) -
+        32px
+    );
+    transition: none;
   }
 }
 </style>
