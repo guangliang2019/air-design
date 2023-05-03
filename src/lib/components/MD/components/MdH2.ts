@@ -1,8 +1,8 @@
-import { Controller, TemplateTree } from "../../_interface";
+import { Prototype } from "../../_interface";
 
-const MdH2Prototype = (
-  controller: Controller<{ id?: string; content: string }>
-): TemplateTree => {
+const MdH2Prototype: Prototype<{ content: string; id?: string }> = (
+  controller
+) => {
   return {
     element: "h2",
     attributes: {

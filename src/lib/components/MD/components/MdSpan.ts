@@ -1,13 +1,10 @@
 import { Prototype } from "../../_interface";
 
-const MdH1Prototype: Prototype<{ content: string; id?: string }> = (
-  controller
-) => {
+const MdSpanPrototype: Prototype<{ content: string }> = (controller) => {
   return {
-    element: "h1",
+    element: "span",
     attributes: {
-      className: "a-md-h1",
-      id: controller.props.id,
+      className: "a-md-span",
       innerText: controller.props.content,
     },
     children: [
@@ -18,4 +15,4 @@ const MdH1Prototype: Prototype<{ content: string; id?: string }> = (
   };
 };
 
-export default MdH1Prototype;
+export default MdSpanPrototype;

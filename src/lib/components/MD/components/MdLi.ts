@@ -1,10 +1,12 @@
 import { Prototype } from "../../_interface";
 import { compileInline } from "../utils";
+
 const MdPPrototype: Prototype<{ content: string }> = (controller) => {
   return {
-    element: "p",
+    element: "li",
     attributes: {
-      className: "a-md-p",
+      className: "a-md-li",
+      innerText: controller.props.content,
     },
     children: [
       ...compileInline(controller.props.content),

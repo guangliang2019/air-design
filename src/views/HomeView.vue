@@ -1,7 +1,9 @@
 <template>
   <div class="root">
     <header class="nav">
-      <div class="sidebar sidebar-nav"></div>
+      <div class="sidebar sidebar-nav">
+        <div class="logo">Simple Lab</div>
+      </div>
       <div class="nav-inner"></div>
     </header>
     <div style="display: flex">
@@ -33,10 +35,10 @@ export default defineComponent({
             With an intuitive in-browser IDE and pre-configured cloud services, AirCode takes care of the backend technology selection, environment setup, and operation, so you can focus on building great products. No more complex setup processes, no more headaches over server management - open your browser, and you're ready to go.
             ## Getting Started
             To help you quickly get familiar with the usage and core features of AirCode, we have designed a 5-minute introductory tutorial.
+            - text1
+            - text2
+            12345 [标题](https://www.baidu.com) 12345 ${"`123`"}, ${"`123`"}
 `,
-      click: () => {
-        console.log(1);
-      },
     };
   },
 });
@@ -65,7 +67,7 @@ export default defineComponent({
   height: 64px;
   &-inner {
     flex: 1;
-    border-bottom: 0.5px solid var(--color-border-1);
+    // border-bottom: 1px solid var(--color-border-1);
   }
 }
 
@@ -77,6 +79,17 @@ export default defineComponent({
   transition: margin-left 0.1s ease;
   &-nav {
     height: 100%;
+    .logo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-1);
+
+      border-bottom: 1px solid var(--color-border-1);
+    }
   }
 }
 
