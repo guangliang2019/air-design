@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Md } from "../lib/components";
+import { Md } from "../_lib/components";
 
 export default defineComponent({
   name: "HomeView",
