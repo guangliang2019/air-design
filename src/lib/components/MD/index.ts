@@ -12,4 +12,4 @@ const Md = adapter<MdProps>(MdPrototype, "a-md", {
 });
 
 export default Md;
-export type { MdProps } from "./interface";
+// export type { MdProps } from "./interface";
