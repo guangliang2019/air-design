@@ -1,4 +1,4 @@
-import adapter from "@/lib/adapter";
+import adapter from "@/_lib/adapter";
 import { PropType } from "vue";
 import ButtonPrototype from "./Button";
 import { ButtonProps } from "./interface";

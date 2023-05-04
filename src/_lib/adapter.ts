@@ -1,4 +1,4 @@
-import { Prototype, TemplateTree } from "@/lib/components/_interface";
+import { Prototype, TemplateTree } from "@/_lib/components/_interface";
 import { defineComponent, h, PropType } from "vue";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

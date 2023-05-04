@@ -1,4 +1,4 @@
-import adapter from "@/lib/adapter";
+import adapter from "@/_lib/adapter";
 import MdPrototype from "./Md";
 import { MdProps } from "./interface";
 import "./style";
